@@ -31,5 +31,9 @@ public class Stack {
         }
         return this.values.get(this.size()-1);
     }
+
+    public Integer pop() {
+        return null;
+    }
     
 }

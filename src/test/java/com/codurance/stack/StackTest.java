@@ -45,4 +45,14 @@ public class StackTest {
         Stack stack = Stack.create();
         assertNull(stack.peek());
     }
+
+    @Test
+    public void stack_pop(){
+        Stack stack = Stack.create();
+        stack.push();
+        stack.push();
+        assertEquals(2, stack.size());
+        assertEquals(Integer.valueOf(2), stack.pop());
+        assertEquals(1, stack.size());
+    }
 }
