@@ -24,8 +24,9 @@ public class Stack {
     public int size() {
         return values.size();
     }
-    public Object peek() {
-        return null;
+
+    public Integer peek() {
+        return this.values.get(this.size()-1);
     }
     
 }
