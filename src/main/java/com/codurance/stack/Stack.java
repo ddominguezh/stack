@@ -20,5 +20,8 @@ public class Stack {
     public void push() {
         values.add(0, values.size()+1);
     }
+    public Object size() {
+        return null;
+    }
     
 }
