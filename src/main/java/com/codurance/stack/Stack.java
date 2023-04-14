@@ -26,6 +26,9 @@ public class Stack {
     }
 
     public Integer peek() {
+        if(this.isEmpty()){
+            return null;
+        }
         return this.values.get(this.size()-1);
     }
     

@@ -41,7 +41,7 @@ public class StackTest {
     }
 
     @Test
-    public void stack_peek_get_null_when_stack_is_empty(){
+    public void stack_peek_return_null_when_stack_is_empty(){
         Stack stack = Stack.create();
         assertNull(stack.peek());
     }
