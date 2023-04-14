@@ -55,4 +55,12 @@ public class StackTest {
         assertEquals(Integer.valueOf(2), stack.pop());
         assertEquals(1, stack.size());
     }
+
+    @Test
+    public void stack_pop_return_null_when_stack_is_empty(){
+        Stack stack = Stack.create();
+        stack.push();
+        assertEquals(Integer.valueOf(1), stack.pop());
+        assertNull(stack.pop());
+    }
 }
