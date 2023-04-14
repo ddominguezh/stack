@@ -1,14 +1,20 @@
 package com.codurance.stack;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class StackTest {
     
+    @Test
+    public void throw_exception_when_create_stack_with_negative_values(){
+        assertThrows(StackWithNegativeCapacityException.class, () -> Stack.create(-1));
+    }
+
     @Test
     public void stack_is_empty(){
         Stack stack = Stack.create(3);
