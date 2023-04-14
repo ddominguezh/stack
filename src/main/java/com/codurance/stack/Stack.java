@@ -18,7 +18,7 @@ public class Stack {
     }
 
     public void push() {
-        values.add(0, values.size()+1);
+        values.add(this.size()+1);
     }
 
     public int size() {
