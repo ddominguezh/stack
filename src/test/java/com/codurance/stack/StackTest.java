@@ -11,20 +11,20 @@ public class StackTest {
     
     @Test
     public void stack_is_empty(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         assertTrue(stack.isEmpty());
     }
 
     @Test
     public void stack_push(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         stack.push();
         assertFalse(stack.isEmpty());
     }
 
     @Test
     public void stack_get_size(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         stack.push();
         assertEquals(1, stack.size());
         stack.push();
@@ -33,7 +33,7 @@ public class StackTest {
 
     @Test
     public void stack_peek(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         stack.push();
         assertEquals(Integer.valueOf(1), stack.peek());
         stack.push();
@@ -42,13 +42,13 @@ public class StackTest {
 
     @Test
     public void stack_peek_return_null_when_stack_is_empty(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         assertNull(stack.peek());
     }
 
     @Test
     public void stack_pop(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         stack.push();
         stack.push();
         assertEquals(2, stack.size());
@@ -58,7 +58,7 @@ public class StackTest {
 
     @Test
     public void stack_pop_return_null_when_stack_is_empty(){
-        Stack stack = Stack.create();
+        Stack stack = Stack.create(3);
         stack.push();
         assertEquals(Integer.valueOf(1), stack.pop());
         assertNull(stack.pop());

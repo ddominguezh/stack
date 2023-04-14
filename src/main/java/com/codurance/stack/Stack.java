@@ -1,16 +1,16 @@
 package com.codurance.stack;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Stack {
 
-    private List<Integer> values;
-    protected Stack(){
-        this.values = new ArrayList<Integer>();
+    private int[] values;
+    protected Stack(int capacity){
+        this.values = new int[capacity];
+        Arrays.fill(this.values, 0);
     }
-    public static Stack create() {
-        return new Stack();
+    public static Stack create(int capacity) {
+        return new Stack(capacity);
     }
 
     public boolean isEmpty() {
@@ -18,24 +18,28 @@ public class Stack {
     }
 
     public void push() {
-        values.add(this.size()+1);
+        values[this.size()] = this.size()+1;
     }
 
     public int size() {
-        return values.size();
+        int index = 0;
+        while(values[index] != 0){
+            index++;
+        }
+        return index;
     }
 
     public Integer peek() {
         if(this.isEmpty()){
             return null;
         }
-        return this.values.get(this.size()-1);
+        return this.values[this.size()-1];
     }
 
     public Integer pop() {
         Integer peek = this.peek();
         if(peek != null){
-            this.values.remove(this.size()-1);
+            this.values[this.size()-1] = 0;
         }
         return peek;
     }
