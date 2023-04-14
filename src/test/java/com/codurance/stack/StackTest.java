@@ -29,6 +29,15 @@ public class StackTest {
     }
 
     @Test
+    public void stack_push_catch_exception_when_we_exceed_capacity(){
+        Stack stack = Stack.create(3);
+        stack.push();
+        stack.push();
+        stack.push();
+        stack.push();
+    }
+
+    @Test
     public void stack_get_size(){
         Stack stack = Stack.create(3);
         stack.push();
