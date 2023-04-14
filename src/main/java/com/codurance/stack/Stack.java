@@ -21,9 +21,10 @@ public class Stack {
     }
 
     public void push() {
-        if(!this.isFull()){
-            values[this.size()] = this.size()+1;
+        if(this.isFull()){
+            throw new StackOverFlowException();
         }
+        values[this.size()] = this.size()+1;
     }
 
     private boolean isFull(){
@@ -40,7 +41,7 @@ public class Stack {
 
     public Integer peek() {
         if(this.isEmpty()){
-            return null;
+            throw new StackOverFlowException();
         }
         return this.values[this.size()-1];
     }
