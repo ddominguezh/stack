@@ -34,7 +34,9 @@ public class Stack {
 
     public Integer pop() {
         Integer peek = this.peek();
-        this.values.remove(this.size()-1);
+        if(peek != null){
+            this.values.remove(this.size()-1);
+        }
         return peek;
     }
     
