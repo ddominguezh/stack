@@ -14,14 +14,15 @@ public class Stack {
     }
 
     public boolean isEmpty() {
-        return values.size() == 0;
+        return this.size() == 0;
     }
 
     public void push() {
         values.add(0, values.size()+1);
     }
-    public Object size() {
-        return null;
+
+    public int size() {
+        return values.size();
     }
     
 }
