@@ -34,7 +34,9 @@ public class StackTest {
         stack.push();
         stack.push();
         stack.push();
+        assertEquals(3, stack.peek());
         stack.push();
+        assertEquals(3, stack.peek());
     }
 
     @Test

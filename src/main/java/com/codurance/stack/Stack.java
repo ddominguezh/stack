@@ -21,12 +21,18 @@ public class Stack {
     }
 
     public void push() {
-        values[this.size()] = this.size()+1;
+        if(!this.isFull()){
+            values[this.size()] = this.size()+1;
+        }
+    }
+
+    private boolean isFull(){
+        return this.size() == this.values.length;
     }
 
     public int size() {
         int index = 0;
-        while(values[index] != 0){
+        while(index < this.values.length && values[index] != 0){
             index++;
         }
         return index;
