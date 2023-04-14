@@ -10,6 +10,9 @@ public class Stack {
         Arrays.fill(this.values, 0);
     }
     public static Stack create(int capacity) {
+        if(capacity < 0){
+            throw new StackWithNegativeCapacityException();
+        }
         return new Stack(capacity);
     }
 
