@@ -2,7 +2,6 @@ package com.codurance.stack;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,14 +28,13 @@ public class StackTest {
     }
 
     @Test
-    public void stack_push_catch_exception_when_we_exceed_capacity(){
+    public void stack_push_throw_exception_when_we_exceed_capacity(){
         Stack stack = Stack.create(3);
         stack.push();
         stack.push();
         stack.push();
         assertEquals(3, stack.peek());
-        stack.push();
-        assertEquals(3, stack.peek());
+        assertThrows(StackOverFlowException.class, () -> stack.push());
     }
 
     @Test
@@ -58,9 +56,9 @@ public class StackTest {
     }
 
     @Test
-    public void stack_peek_return_null_when_stack_is_empty(){
+    public void stack_peek_throw_exception_when_stack_is_empty(){
         Stack stack = Stack.create(3);
-        assertNull(stack.peek());
+        assertThrows(StackOverFlowException.class, () -> stack.peek());
     }
 
     @Test
@@ -74,10 +72,10 @@ public class StackTest {
     }
 
     @Test
-    public void stack_pop_return_null_when_stack_is_empty(){
+    public void stack_pop_throw_exception_when_stack_is_empty(){
         Stack stack = Stack.create(3);
         stack.push();
         assertEquals(Integer.valueOf(1), stack.pop());
-        assertNull(stack.pop());
+        assertThrows(StackOverFlowException.class, () -> stack.pop());
     }
 }
