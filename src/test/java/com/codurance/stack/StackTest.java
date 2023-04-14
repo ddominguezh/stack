@@ -29,4 +29,13 @@ public class StackTest {
         stack.push();
         assertEquals(2, stack.size());
     }
+
+    @Test
+    public void statck_peek(){
+        Stack stack = Stack.create();
+        stack.push();
+        assertEquals(1, stack.peek());
+        stack.push();
+        assertEquals(2, stack.peek());
+    }
 }
